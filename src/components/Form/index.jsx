@@ -88,7 +88,7 @@ const From = () => {
 
     console.log(dataWithFile);
 
-    axios.post(`http://localhost:3001/post`, dataWithFile).then((res) => {
+    axios.post(`http://localhost/post`, dataWithFile).then((res) => {
       console.log(res);
     });
   };
@@ -98,7 +98,7 @@ const From = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <input {...register('firstName')} />
         <input {...register('secondName')} />
-        <input {...register('telephoneName')} />
+        <input {...register('telephone')} />
         <input
           type="file"
           name={'files'}
@@ -109,7 +109,6 @@ const From = () => {
         />
         <input type="submit" />
       </form>
-      {/*<img src={img} alt={''} />*/}
     </div>
   );
 };
