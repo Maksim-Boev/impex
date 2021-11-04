@@ -61,6 +61,12 @@ export const Text = styled.div`
   width: 40%;
   padding: 50px 0 0 100px;
   font-size: 24px;
+  @media (max-width: 1024px) {
+    font-size: 22px;
+  }
+  @media (max-width: 800px) {
+    font-size: 19px;
+  }
   @media (max-width: 425px) {
     width: 80%;
     font-size: 16px;
@@ -75,6 +81,7 @@ export const WrapperIcon = styled.div`
   z-index: 3;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
   @media (max-width: 800px) {
     flex-direction: column;
