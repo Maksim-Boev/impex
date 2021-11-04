@@ -1,6 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import {
+  Form,
+  FormInput,
+  FormLabel,
+  Wrapper,
+  Input,
+  Button,
+  Submit,
+  FormTitle,
+  DropZone,
+  FormGroup,
+  FileDropZone,
+  ButtonDel,
+  CheckIcon,
+  WrappTitle,
+} from './style';
+
+import checkList from '../../assets/icon/checklist.svg';
 
 const From = () => {
   // const [img, setImg] = useState();
@@ -67,6 +85,15 @@ const From = () => {
     }
   };
 
+  const Delete = (index) => {
+    console.log(fileName);
+    const temp = [...fileName];
+
+    temp.splice(index, 1);
+
+    setFileName(temp);
+  };
+
   useEffect(() => {
     console.log('------');
     console.log(
@@ -88,28 +115,106 @@ const From = () => {
 
     console.log(dataWithFile);
 
-    axios.post(`http://localhost/post`, dataWithFile).then((res) => {
+    axios.post(`http://localhost:3003/post`, dataWithFile).then((res) => {
       console.log(res);
     });
   };
 
+  const ref = useRef(null);
+
+  const clickBtn = () => {
+    ref.current.click();
+  };
+
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register('firstName')} />
-        <input {...register('secondName')} />
-        <input {...register('telephone')} />
-        <input
+    <Wrapper>
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <WrappTitle>
+          <CheckIcon src={checkList} alt={''} />
+          <FormTitle>Подать заявку</FormTitle>
+        </WrappTitle>
+
+        <FormGroup>
+          <FormInput
+            id="Name"
+            type="text"
+            placeholder="Name"
+            {...register('firstName')}
+          />
+
+          <FormLabel for="Name">Имя</FormLabel>
+        </FormGroup>
+        <FormGroup>
+          <FormInput
+            placeholder={'EMail'}
+            id="EMail"
+            type="text"
+            {...register('EMail')}
+          />
+          <FormLabel for="EMail">EMail</FormLabel>
+        </FormGroup>
+        <FormGroup>
+          <FormInput
+            placeholder={'Телефон'}
+            id="telephone"
+            type="text"
+            {...register('telephone')}
+          />
+          <FormLabel for="telephone">Телефон</FormLabel>
+        </FormGroup>
+        <FormGroup>
+          <FormInput
+            placeholder={'Откуда'}
+            id="from"
+            type="text"
+            {...register('secondName')}
+          />
+          <FormLabel for="from">Откуда</FormLabel>
+        </FormGroup>
+        <FormGroup>
+          <FormInput
+            placeholder={'Куда'}
+            id="to"
+            type="text"
+            {...register('secondName')}
+          />
+          <FormLabel for="to">Куда</FormLabel>
+        </FormGroup>
+        <FormGroup>
+          <FormInput
+            placeholder={'Описание'}
+            id="description"
+            type="text"
+            {...register('description')}
+          />
+          <FormLabel for="description">Описание груза</FormLabel>
+        </FormGroup>
+
+        <Input
+          ref={ref}
           type="file"
           name={'files'}
           multiple
           accept=".png, .jpeg, .pdf"
-          className="multiple-upload"
+          style={{ display: 'none' }}
           onChange={onUploadFileChange}
         />
-        <input type="submit" />
-      </form>
-    </div>
+        <DropZone>
+          {fileName.map((file, index) => (
+            <FileDropZone key={file}>
+              <p style={{ color: '#000' }}>{file}</p>
+              <ButtonDel onClick={() => Delete(index)}>Delete</ButtonDel>
+            </FileDropZone>
+          ))}
+        </DropZone>
+
+        <Button type={'button'} onClick={clickBtn}>
+          Загрузить
+        </Button>
+
+        <Submit type="submit" />
+      </Form>
+    </Wrapper>
   );
 };
 

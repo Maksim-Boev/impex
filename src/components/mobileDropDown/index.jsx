@@ -25,7 +25,7 @@ const BurgerToggle = () => {
               <span></span>
             </div>
           </Toggle>
-          <Drawer toggle={isToggled} />
+          <Drawer toggle={isToggled} onClick={toggleSideNav} />
         </>
       )}
     </>

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { primeColor } from '../../constants/colors';
-import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 export const Container = styled.header`
   position: fixed;
   z-index: 6;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +31,7 @@ export const NavList = styled.nav`
   justify-content: space-around;
 `;
 
-export const Link = styled(NavLink)`
+export const Link = styled(HashLink)`
   color: #fff;
   text-decoration: none;
 `;

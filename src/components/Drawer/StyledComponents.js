@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 export const TicketList = styled.ul`
   display: flex;
@@ -19,7 +19,7 @@ export const TicketList = styled.ul`
   z-index: 1;
 `;
 
-export const Link = styled(NavLink)`
+export const Link = styled(HashLink)`
   color: #fff;
   padding: 10px 0;
   font-size: 28px;

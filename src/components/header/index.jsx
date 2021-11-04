@@ -16,8 +16,12 @@ const Header = () => {
 
       {width > 425 && (
         <NavList>
-          <Link to={'/'}>О нас</Link>
-          <Link to={'/'}>Услуги</Link>
+          <Link smooth to={'/#about'}>
+            О нас
+          </Link>
+          <Link smooth to={'/#services'}>
+            Услуги
+          </Link>
           <Link to={'/'}>Контакты</Link>
           <Phone />
           <LanguagesDrop />

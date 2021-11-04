@@ -9,23 +9,29 @@ import {
 } from './StyledComponents';
 import PropTypes from 'prop-types';
 
-const Drawer = ({ toggle }) => {
+const Drawer = ({ toggle, onClick }) => {
   return (
     <>
       <TicketList open={toggle}>
-        <Link to={'/'}>О нас</Link>
-        <Link to={'/'}>Услуги</Link>
-        <Link to={'/'}>Контакты</Link>
+        <Link to={'/#about'}>
+          <span onClick={onClick}>О нас</span>
+        </Link>
+        <Link to={'/#services'}>
+          <span onClick={onClick}>Услуги</span>
+        </Link>
+        <Link to={'/'}>
+          <span onClick={onClick}>Контакты</span>
+        </Link>
 
         <TelWrapper>
-          <LinkPhone href={`tel:+38 (050) 197-14-15`}>
-            +38 (050) 197-14-15
+          <LinkPhone href={`tel:+38 (050) 111-11-11`}>
+            +38 (050) 111-11-11
           </LinkPhone>
-          <LinkPhone href={`tel:+38 (050) 197-14-15`}>
-            +38 (050) 197-14-15
+          <LinkPhone href={`tel:+38 (050) 111-11-11`}>
+            +38 (050) 111-11-11
           </LinkPhone>
-          <LinkPhone href={`tel:+38 (050) 197-14-15`}>
-            +38 (050) 197-14-15
+          <LinkPhone href={`tel:+38 (050) 111-111-11`}>
+            +38 (050) 111-11-11
           </LinkPhone>
         </TelWrapper>
 
@@ -43,4 +49,5 @@ export default Drawer;
 
 Drawer.propTypes = {
   toggle: PropTypes.boolean,
+  onClick: PropTypes.function,
 };

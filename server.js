@@ -6,7 +6,7 @@ const mailer = require('./nodemailer');
 
 app.use(cors());
 const jsonParser = bodyParser.json();
-const port = process.env.port || 8080;
+const port = process.env.port || 3003;
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
