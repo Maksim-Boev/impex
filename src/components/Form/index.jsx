@@ -139,6 +139,7 @@ const From = () => {
             id="Name"
             type="text"
             placeholder="Name"
+            required={true}
             {...register('firstName')}
           />
 
@@ -149,6 +150,7 @@ const From = () => {
             placeholder={'EMail'}
             id="EMail"
             type="text"
+            required={true}
             {...register('EMail')}
           />
           <FormLabel for="EMail">EMail</FormLabel>
@@ -158,6 +160,7 @@ const From = () => {
             placeholder={'Телефон'}
             id="telephone"
             type="text"
+            required={true}
             {...register('telephone')}
           />
           <FormLabel for="telephone">Телефон</FormLabel>

@@ -5,13 +5,6 @@ import bgService from '../../assets/images/doroga.webp';
 import bgForm from '../../assets/images/sklad.webp';
 import { HashLink } from 'react-router-hash-link';
 
-export const Video = styled.video`
-  height: 100vh;
-  object-fit: cover;
-  @media (max-width: 425px) {
-    padding-top: 70px;
-  }
-`;
 export const Container = styled.div`
   max-width: 1920px;
   margin: 0 auto;

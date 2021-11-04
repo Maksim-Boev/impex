@@ -25,15 +25,28 @@ export const Container = styled.header`
   }
 `;
 
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: clamp(400px, 100%, 1900px);
+  padding: 0 70px;
+  @media (max-width: 425px) {
+    padding: 0 30px;
+  }
+`;
+
 export const NavList = styled.nav`
   width: 500px;
   display: flex;
   justify-content: space-around;
+  align-self: center;
 `;
 
 export const Link = styled(HashLink)`
   color: #fff;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 `;
 
 export const LogoWrapper = styled.div`
@@ -43,7 +56,6 @@ export const LogoWrapper = styled.div`
 
 export const LogoImg = styled.img`
   width: 70px;
-  padding-left: 15px;
 `;
 
 export const TextLogo = styled.div`
