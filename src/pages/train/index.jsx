@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Img, PageWrapper } from '../styles';
 import trainImg from '../../assets/images/train.webp';
+import FormFromPages from '../formFromServices';
 
 const TrainPage = () => {
   useEffect(() => {
@@ -76,6 +77,7 @@ const TrainPage = () => {
         товаров, позаботятся о целостности грузов, предложат эффективные и
         надежные способы доставки в любую точку мира.
       </p>
+      <FormFromPages />
     </PageWrapper>
   );
 };

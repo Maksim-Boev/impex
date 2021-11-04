@@ -209,7 +209,7 @@ const From = () => {
         </DropZone>
 
         <Button type={'button'} onClick={clickBtn}>
-          Загрузить
+          Загрузить файл
         </Button>
 
         <Submit type="submit" />

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Img, PageWrapper } from '../styles';
 import shipImg from '../../assets/images/ship.webp';
+import FormFromPages from '../formFromServices';
 
 const ShipPage = () => {
   useEffect(() => {
@@ -89,6 +90,7 @@ const ShipPage = () => {
         оформление, составят оптимально выгодный маршрут, полностью
         проконтролируют движение контейнера на всех отрезках пути.
       </p>
+      <FormFromPages />
     </PageWrapper>
   );
 };

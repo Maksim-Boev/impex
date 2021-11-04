@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { PageWrapper, Img } from '../styles';
 import truckImg from '../../assets/images/truck.webp';
+import FormFromPages from '../formFromServices';
 
 const TruckPage = () => {
   useEffect(() => {
@@ -80,6 +81,7 @@ const TruckPage = () => {
         разрешения на осуществление деятельности, доставят продукцию оперативно
         и без рисков.
       </p>
+      <FormFromPages />
     </PageWrapper>
   );
 };

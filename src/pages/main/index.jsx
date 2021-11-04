@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import {
   About,
   Container,
-  Form,
   LinkForm,
   LinkUI,
   Services,
@@ -23,7 +22,8 @@ import {
   TrainIcon,
   TruckIcon,
 } from '../../components/icons';
-import From from '../../components/Form';
+
+import FormPage from '../form';
 
 const Main = () => {
   useEffect(() => {
@@ -112,13 +112,7 @@ const Main = () => {
         </Wrapper>
       </Services>
 
-      <Form id={'form'}>
-        <Wrapper>
-          <Container>
-            <From />
-          </Container>
-        </Wrapper>
-      </Form>
+      <FormPage />
     </div>
   );
 };

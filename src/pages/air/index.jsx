@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Img, PageWrapper } from '../styles';
 import airImg from '../../assets/images/load aircraft.webp';
+import FormFromPages from '../formFromServices';
 
 const AirPage = () => {
   useEffect(() => {
@@ -111,6 +112,7 @@ const AirPage = () => {
       <li>Принтеры 3D НЕ БРЕНД 16,3</li>
       <li>Чай, флешки для телефонов 16,2</li>
       <li>Бренд 17,5</li>
+      <FormFromPages />
     </PageWrapper>
   );
 };

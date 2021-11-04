@@ -3,11 +3,19 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   width: clamp(320px, 50%, 800px);
   margin: 20vh auto 0;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
-  padding: 20px 0;
+  padding: 70px 0;
+  z-index: 3;
+  @media (max-width: 425px) {
+    padding: 30px 0;
+  }
+  @media (max-width: 320px) {
+    padding: 15px 0;
+  }
 `;
 
 export const FormGroup = styled.div`
@@ -156,6 +164,9 @@ export const Submit = styled.input`
 
 export const FormTitle = styled.h2`
   color: #000;
+  @media (max-width: 425px) {
+    margin: 0;
+  }
 `;
 
 export const WrappTitle = styled.div`
