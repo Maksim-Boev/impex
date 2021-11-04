@@ -7,5 +7,5 @@ export const Wrapper = styled.footer`
 `;
 
 export const Container = styled.div`
-  width: clamp(400px, 100%, 1920px);
+  width: clamp(320px, 100%, 1920px);
 `;
