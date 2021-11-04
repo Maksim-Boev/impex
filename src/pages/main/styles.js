@@ -210,6 +210,7 @@ export const LinkForm = styled(HashLink)`
   padding: 10px 30px;
   position: absolute;
   top: 400px;
+  z-index: 3;
   @media (max-width: 425px) {
     top: 170px;
   }
