@@ -7,6 +7,7 @@ import ShipPage from './pages/ship';
 import TrainPage from './pages/train';
 import TruckPage from './pages/truck';
 import PageNotFound from './pages/PageNotFound';
+import Footer from './components/footer';
 
 const App = () => {
   useEffect(() => {
@@ -35,6 +36,7 @@ const App = () => {
         <Route exact path="/truck" component={TruckPage} />
         <Route render={() => <PageNotFound />} />
       </Switch>
+      <Footer />
     </div>
   );
 };

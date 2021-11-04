@@ -28,7 +28,6 @@ export const WrapperCarousel = styled.div`
 
 export const About = styled.section`
   height: 100vh;
-  top: -5px;
   position: relative;
   background: url(${bgAbout}) center no-repeat;
   background-size: cover;
@@ -144,7 +143,6 @@ export const Img = styled.img`
 
 export const Form = styled.section`
   height: 100vh;
-  top: -5px;
   position: relative;
   background: url(${bgForm}) center no-repeat;
   background-size: cover;
@@ -171,7 +169,6 @@ export const Form = styled.section`
 
 export const Services = styled.section`
   height: 100vh;
-  top: -5px;
   position: relative;
   background: url(${bgService}) center no-repeat;
   background-size: cover;

@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: clamp(400px, 100%, 1900px);
-  padding: 0 70px;
+  padding: 0 100px;
   @media (max-width: 425px) {
     padding: 0 30px;
   }

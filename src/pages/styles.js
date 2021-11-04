@@ -9,7 +9,7 @@ export const PageWrapper = styled.div`
     font-weight: bold;
   }
   @media (max-width: 424px) {
-    padding: 10vh 30px 50px;
+    padding: 10vh 30px 0;
   }
 `;
 
@@ -25,7 +25,6 @@ export const WrapperPageNotFound = styled.div`
 export const WrapperFormFromPages = styled.section`
   height: 100vh;
   margin-top: 50px;
-  top: -5px;
   position: relative;
   background: url(${bgForm}) center no-repeat;
   background-size: cover;
@@ -34,6 +33,6 @@ export const WrapperFormFromPages = styled.section`
   @media (max-width: 425px) {
     padding: 0 10px;
     background-position: 40%;
-    margin: 50px -30px;
+    margin: 50px -30px 0;
   }
 `;

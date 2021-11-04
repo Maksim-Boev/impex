@@ -115,9 +115,11 @@ const From = () => {
 
     console.log(dataWithFile);
 
-    axios.post(`http://localhost:3003/post`, dataWithFile).then((res) => {
-      console.log(res);
-    });
+    axios
+      .post(`https://impexgroup.netlify.app/post`, dataWithFile)
+      .then((res) => {
+        console.log(res);
+      });
   };
 
   const ref = useRef(null);
@@ -170,7 +172,7 @@ const From = () => {
             placeholder={'Откуда'}
             id="from"
             type="text"
-            {...register('secondName')}
+            {...register('from')}
           />
           <FormLabel for="from">Откуда</FormLabel>
         </FormGroup>
@@ -179,7 +181,7 @@ const From = () => {
             placeholder={'Куда'}
             id="to"
             type="text"
-            {...register('secondName')}
+            {...register('to')}
           />
           <FormLabel for="to">Куда</FormLabel>
         </FormGroup>

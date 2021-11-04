@@ -6,7 +6,7 @@ const mailer = require('./nodemailer');
 
 app.use(cors());
 const jsonParser = bodyParser.json();
-const port = process.env.port || 3003;
+const port = process.env.port || 3005;
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
@@ -27,9 +27,15 @@ app.post('/post', jsonParser, (request, response) => {
       `
       Имя: ${request.body.firstName}` +
       `
-      Фамилия: ${request.body.secondName} ` +
+      EMail: ${request.body.EMail} ` +
       `
-      Телефон: ${request.body.telephone}`,
+      Телефон: ${request.body.telephone} ` +
+      `
+      Описание: ${request.body.description} ` +
+      `
+      Откуда: ${request.body.from} ` +
+      `
+      Куда: ${request.body.to} `,
 
     attachments: request.body.file.map((file) => ({
       filename: Object.keys(file)[0],
