@@ -31,7 +31,8 @@ export const Wrapper = styled.div`
   width: clamp(400px, 100%, 1900px);
   padding: 0 100px;
   @media (max-width: 425px) {
-    padding: 0 30px;
+    padding: 0 0 0 20px;
+    width: auto;
   }
 `;
 
@@ -62,9 +63,14 @@ export const TextLogo = styled.div`
   color: #fff;
   font-size: 26px;
   line-height: 26px;
+  font-weight: bold;
   padding-left: 20px;
   padding-right: 0;
   @media (max-width: 425px) {
     padding-left: 0;
+    font-weight: bold;
+  }
+  @media (max-width: 320px) {
+    font-size: 22px;
   }
 `;

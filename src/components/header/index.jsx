@@ -14,7 +14,7 @@ const Header = () => {
         <Link to={'/'}>
           <LogoImg src={Logo} alt={''} />
 
-          <TextLogo>IC IMPEXGROUP</TextLogo>
+          {width > 425 && <TextLogo>IC IMPEXGROUP</TextLogo>}
         </Link>
 
         {width > 425 && (
@@ -31,7 +31,7 @@ const Header = () => {
           </NavList>
         )}
       </Wrapper>
-
+      {width < 425 && <TextLogo>IC IMPEXGROUP</TextLogo>}
       <BurgerToggle />
     </Container>
   );

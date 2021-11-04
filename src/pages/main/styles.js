@@ -32,7 +32,7 @@ export const About = styled.section`
   background: url(${bgAbout}) center no-repeat;
   background-size: cover;
   @media (max-width: 425px) {
-    padding: 0 10px;
+    //padding: 0 10px;
     background-position: 65%;
   }
   :after {
@@ -51,7 +51,7 @@ export const About = styled.section`
 `;
 
 export const Wrapper = styled.div`
-  width: 95%;
+  width: 100%;
   z-index: 3;
   color: #fff;
   position: absolute;
@@ -149,7 +149,7 @@ export const Form = styled.section`
   display: flex;
   justify-content: center;
   @media (max-width: 425px) {
-    padding: 0 10px;
+    //padding: 0 10px;
     background-position: 40%;
   }
   :after {
@@ -175,7 +175,7 @@ export const Services = styled.section`
   display: flex;
   justify-content: center;
   @media (max-width: 425px) {
-    padding: 0 10px;
+    //padding: 0 10px;
     background-position: 40%;
   }
   :after {
