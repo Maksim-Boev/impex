@@ -59,7 +59,7 @@ export const Wrapper = styled.div`
 
 export const Text = styled.div`
   width: 40%;
-  padding: 50px 0 0 100px;
+  padding: 125px 0 0 100px;
   font-size: 24px;
   @media (max-width: 1024px) {
     font-size: 22px;
@@ -70,7 +70,7 @@ export const Text = styled.div`
   @media (max-width: 425px) {
     width: 80%;
     font-size: 16px;
-    padding: 50px 30px 0;
+    padding: 100px 30px 0;
   }
 `;
 

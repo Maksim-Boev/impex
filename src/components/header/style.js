@@ -11,7 +11,7 @@ export const Container = styled.header`
   justify-content: center;
   background: rgba(0, 119, 139, 0.6);
   width: 100%;
-  height: 70px;
+  height: 135px;
 
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Chrome/Safari/Opera */
@@ -22,6 +22,7 @@ export const Container = styled.header`
   @media (max-width: 425px) {
     background: ${primeColor};
     justify-content: space-between;
+    height: 100px;
   }
 `;
 
@@ -56,7 +57,10 @@ export const LogoWrapper = styled.div`
 `;
 
 export const LogoImg = styled.img`
-  width: 70px;
+  width: 140px;
+  @media (max-width: 425px) {
+    width: 100px;
+  }
 `;
 
 export const TextLogo = styled.div`
