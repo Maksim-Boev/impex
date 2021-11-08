@@ -4,12 +4,12 @@ import bgForm from '../assets/images/sklad.webp';
 export const PageWrapper = styled.div`
   max-width: 1280px;
   margin: 0 auto;
-  padding: 10vh 50px 50px;
+  padding: 140px 50px 50px;
   & span {
     font-weight: bold;
   }
   @media (max-width: 424px) {
-    padding: 10vh 30px 0;
+    padding: 110px 30px 0;
   }
 `;
 
@@ -23,7 +23,7 @@ export const WrapperPageNotFound = styled.div`
 `;
 
 export const WrapperFormFromPages = styled.section`
-  height: 100vh;
+  height: 900px;
   margin-top: 50px;
   position: relative;
   background: url(${bgForm}) center no-repeat;
@@ -31,6 +31,7 @@ export const WrapperFormFromPages = styled.section`
   display: flex;
   justify-content: center;
   @media (max-width: 425px) {
+    height: 100vh;
     padding: 0 10px;
     background-position: 40%;
     margin: 50px -30px 0;

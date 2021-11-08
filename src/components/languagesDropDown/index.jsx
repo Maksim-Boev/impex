@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useWindowSize } from '../../hooks/useWindowSize';
 import {
   Border,
@@ -9,22 +9,36 @@ import {
 } from './style';
 import { CSSTransition } from 'react-transition-group';
 import useOutsideClick from '../../hooks/useOutsideClick';
+import { useTranslation } from 'react-i18next';
 
 const LanguagesDrop = () => {
   const [isOpenLang, setIsOpenLang] = useState(false);
-  const [currentLang, setCurrentLang] = useState('UK');
+  const [currentLang, setCurrentLang] = useState(
+    localStorage.getItem('lng') || 'uk'
+  );
   const ref = useRef(null);
   const handleOutsideClick = () => setIsOpenLang(false);
   useOutsideClick(ref, handleOutsideClick);
 
   const toggling = () => setIsOpenLang(!isOpenLang);
   const { width } = useWindowSize();
+  const { i18n } = useTranslation();
+  console.log(currentLang);
+  useEffect(() => {
+    if (localStorage.getItem('lng') !== currentLang) {
+      console.log('Chang Lang');
+      localStorage.setItem('lng', currentLang);
+    }
+    i18n.changeLanguage(currentLang);
+  }, [currentLang]);
 
   return (
     <>
       {width > 425 && (
         <div ref={ref}>
-          <CurrentLang onClick={toggling}>{currentLang}</CurrentLang>
+          <CurrentLang onClick={toggling}>
+            {currentLang.toUpperCase()}
+          </CurrentLang>
 
           <CSSTransition
             in={isOpenLang}
@@ -38,7 +52,7 @@ const LanguagesDrop = () => {
                   <ListItem
                     onClick={() => {
                       toggling();
-                      setCurrentLang('UK');
+                      setCurrentLang('uk');
                     }}
                   >
                     Українська
@@ -49,7 +63,7 @@ const LanguagesDrop = () => {
                   <ListItem
                     onClick={() => {
                       toggling();
-                      setCurrentLang('RU');
+                      setCurrentLang('ru');
                     }}
                   >
                     Русский
@@ -59,7 +73,7 @@ const LanguagesDrop = () => {
                   <ListItem
                     onClick={() => {
                       toggling();
-                      setCurrentLang('EN');
+                      setCurrentLang('en');
                     }}
                   >
                     English

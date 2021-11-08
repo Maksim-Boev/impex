@@ -5,7 +5,7 @@ let transporter = nodemailer.createTransport({
   port: 465,
   auth: {
     user: 'info@impexgroup.com.ua',
-    pass: 'ghjnjrjk7',
+    pass: 'Qwerty1234567',
   },
 });
 

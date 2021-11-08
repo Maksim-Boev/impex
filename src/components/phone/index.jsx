@@ -3,7 +3,7 @@ import DropDown from '../dropDown';
 import { Icon, LinkPhone, Wrapper } from './style';
 
 const Phone = () => {
-  const [number, setNumber] = React.useState('+38 (050) 000-00-00');
+  const [number, setNumber] = React.useState('+38 (050) 749-37-37');
   const handleNumber = (number) => {
     setNumber(number);
   };

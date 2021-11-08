@@ -19,19 +19,19 @@ const Drawer = ({ toggle, onClick }) => {
         <Link to={'/#services'}>
           <span onClick={onClick}>Услуги</span>
         </Link>
-        <Link to={'/'}>
-          <span onClick={onClick}>Контакты</span>
-        </Link>
+        {/*<Link to={'/'}>*/}
+        {/*  <span onClick={onClick}>Контакты</span>*/}
+        {/*</Link>*/}
 
         <TelWrapper>
-          <LinkPhone href={`tel:+38 (050) 111-11-11`}>
-            +38 (050) 111-11-11
+          <LinkPhone href={`tel:+38 (050) 749-37-37`}>
+            +38 (050) 749-37-37
           </LinkPhone>
-          <LinkPhone href={`tel:+38 (050) 111-11-11`}>
-            +38 (050) 111-11-11
+          <LinkPhone href={`tel:+38 (098) 749-37-37`}>
+            +38 (098) 749-37-37
           </LinkPhone>
-          <LinkPhone href={`tel:+38 (050) 111-111-11`}>
-            +38 (050) 111-11-11
+          <LinkPhone href={`mailto:info@impexgroup.com.ua`}>
+            info@impexgroup.com.ua
           </LinkPhone>
         </TelWrapper>
 

@@ -45,21 +45,18 @@ const DropDown = (prop) => {
                   <ListItem
                     onClick={() => {
                       toggling();
-                      prop.setNumber('+38 (050) 111-22-33');
+                      prop.setNumber('+38 (098) 749-37-37');
                     }}
                   >
-                    +38 (050) 111-22-33
+                    +38 (098) 749-37-37
                   </ListItem>
-                </Border>
-
-                <Border>
                   <ListItem
                     onClick={() => {
                       toggling();
-                      prop.setNumber('+38 (068) 111-22-33');
+                      prop.setNumber('+38 (050) 749-37-37');
                     }}
                   >
-                    +38 (068) 111-22-33
+                    +38 (050) 749-37-37
                   </ListItem>
                 </Border>
               </DropDownList>

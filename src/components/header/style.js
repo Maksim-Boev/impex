@@ -46,9 +46,13 @@ export const NavList = styled.nav`
 
 export const Link = styled(HashLink)`
   color: #fff;
+  font-size: 20px;
   text-decoration: none;
   display: flex;
   align-items: center;
+  :hover {
+    color: aquamarine;
+  }
 `;
 
 export const LogoWrapper = styled.div`

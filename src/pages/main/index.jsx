@@ -24,8 +24,10 @@ import {
 } from '../../components/icons';
 
 import FormPage from '../form';
+import { useTranslation } from 'react-i18next';
 
 const Main = () => {
+  const { t } = useTranslation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -60,22 +62,10 @@ const Main = () => {
         <Wrapper>
           <Container>
             <Text>
-              <h2>О нас</h2>
+              <h2>{t('main.aboutTitle')}</h2>
               <span>
-                ООО &quot;Международная компания &quot;ИМПЕКСГРУП &quot; успешно
-                работает на рынке Украины с 1999 года и предоставляет широкий
-                спектр услуг в сфере грузоперевозок железнодорожным,
-                автомобильным, морским и воздушным транспортом, хранения,
-                сопровождения и таможенного оформления грузов.
-                <p>
-                  Мы используем передовые технологии в транспортной логистике,
-                  постоянно расширяя перечень грузов и географию поставок,
-                  предлагаем клиентам выгодные условия сотрудничества,
-                  гарантируем высокий уровень безопасности перевозимых товаров.
-                  Цель нашей компании – обеспечивать логистический сервис,
-                  который полностью отвечает современным европейским и мировым
-                  стандартам.
-                </p>
+                {t('main.about')}
+                <p>{t('main.aboutParagraph')}</p>
               </span>
             </Text>
           </Container>
@@ -85,27 +75,27 @@ const Main = () => {
         <Wrapper>
           <Container>
             <Text>
-              <h2>НАШИ УСЛУГИ</h2>
+              <h2>{t('main.service')}</h2>
             </Text>
             <WrapperIcon>
-              <LinkUI to={'/ship'}>
-                <ShipIcon />
-                <span>Морские перевозки</span>
-              </LinkUI>
-
               <LinkUI to={'/air'}>
                 <AirplaneIcon />
-                <span>Авиаперевозки грузов</span>
+                <span>{t('main.serviceAir')}</span>
               </LinkUI>
 
-              <LinkUI to={'/train'}>
-                <TrainIcon />
-                <span>Железнодорожные перевозки</span>
+              <LinkUI to={'/ship'}>
+                <ShipIcon />
+                <span>{t('main.serviceShip')}</span>
               </LinkUI>
 
               <LinkUI to={'/truck'}>
                 <TruckIcon />
-                <span>Автомобильные перевозки</span>
+                <span>{t('main.serviceTruck')}</span>
+              </LinkUI>
+
+              <LinkUI to={'/train'}>
+                <TrainIcon />
+                <span>{t('main.serviceTrain')}</span>
               </LinkUI>
             </WrapperIcon>
           </Container>

@@ -1,4 +1,5 @@
 import Header from './components/header';
+import './i18n';
 import { Route, Switch } from 'react-router-dom';
 import { useEffect } from 'react';
 import Main from './pages/main';

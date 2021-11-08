@@ -11,9 +11,12 @@ export const Icon = styled.div`
 `;
 export const LinkPhone = styled.a`
   text-decoration: none;
-  color: aliceblue;
+  color: #fff;
   padding: 0 10px;
-  font-size: 14px;
+  font-size: 18px;
+  :hover {
+    color: aquamarine;
+  }
 `;
 
 export const Container = styled.div``;

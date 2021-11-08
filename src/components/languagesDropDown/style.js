@@ -7,7 +7,7 @@ export const DropDownListContainer = styled('div')`
 export const DropDownList = styled('ul')`
   padding: 5px 0;
   margin-left: -23px;
-  margin-top: 24px;
+  margin-top: 54px;
   background: rgba(0, 119, 139, 0.6);
   box-sizing: border-box;
   color: #fff;
@@ -25,6 +25,7 @@ export const ListItem = styled('li')`
 
 export const CurrentLang = styled.div`
   color: white;
+  font-size: 20px;
 `;
 
 export const Border = styled.div`

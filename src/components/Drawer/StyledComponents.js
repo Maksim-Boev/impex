@@ -7,7 +7,7 @@ export const TicketList = styled.ul`
   align-items: center;
   padding: 30px 0 0 0;
   margin: 0;
-  top: 68px;
+  top: 95px;
   ${({ open }) => {
     return open ? 'right: 0' : 'right: -100%';
   }};
@@ -37,6 +37,7 @@ export const TelWrapper = styled.div`
   padding: 20px 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const LangWrapper = styled.a`

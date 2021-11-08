@@ -5,33 +5,37 @@ import BurgerToggle from '../mobileDropDown';
 import { useWindowSize } from '../../hooks/useWindowSize';
 import Logo from '../../assets/images/logo.png';
 import LanguagesDrop from '../languagesDropDown';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const { width } = useWindowSize();
+  const { t } = useTranslation();
   return (
     <Container>
       <Wrapper>
         <Link to={'/'}>
           <LogoImg src={Logo} alt={''} />
 
-          {width > 425 && <TextLogo>IC IMPEXGROUP</TextLogo>}
+          {width > 425 && <TextLogo>IMPEXGROUP</TextLogo>}
         </Link>
 
         {width > 425 && (
           <NavList>
             <Link smooth to={'/#about'}>
-              О нас
+              {t('main.aboutNav')}
             </Link>
             <Link smooth to={'/#services'}>
-              Услуги
+              {t('main.serviceNav')}
             </Link>
-            <Link to={'/'}>Контакты</Link>
+            {/*<Link smooth to={'/#contacts'}>*/}
+            {/*  {t('main.contact')}*/}
+            {/*</Link>*/}
             <Phone />
             <LanguagesDrop />
           </NavList>
         )}
       </Wrapper>
-      {width < 425 && <TextLogo>IC IMPEXGROUP</TextLogo>}
+      {width < 425 && <TextLogo>IMPEXGROUP</TextLogo>}
       <BurgerToggle />
     </Container>
   );

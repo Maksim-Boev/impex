@@ -19,10 +19,11 @@ import {
 } from './style';
 
 import checkList from '../../assets/icon/checklist.svg';
+import { useTranslation } from 'react-i18next';
 
 const From = () => {
   // const [img, setImg] = useState();
-
+  const { t } = useTranslation();
   const { register, handleSubmit } = useForm();
 
   // const uploadScreenshotFile = (event) => {
@@ -115,11 +116,9 @@ const From = () => {
 
     console.log(dataWithFile);
 
-    axios
-      .post(`https://impexgroup.netlify.app/post`, dataWithFile)
-      .then((res) => {
-        console.log(res);
-      });
+    axios.post(`http://localhost:3004/post`, dataWithFile).then((res) => {
+      console.log(res);
+    });
   };
 
   const ref = useRef(null);
@@ -133,7 +132,7 @@ const From = () => {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <WrappTitle>
           <CheckIcon src={checkList} alt={''} />
-          <FormTitle>Подать заявку</FormTitle>
+          <FormTitle>{t('main.form')}</FormTitle>
         </WrappTitle>
 
         <FormGroup>
@@ -144,19 +143,9 @@ const From = () => {
             required={true}
             {...register('firstName')}
           />
+          <FormLabel for="Name">{t('main.formName')}</FormLabel>
+        </FormGroup>
 
-          <FormLabel for="Name">Имя</FormLabel>
-        </FormGroup>
-        <FormGroup>
-          <FormInput
-            placeholder={'EMail'}
-            id="EMail"
-            type="text"
-            required={true}
-            {...register('EMail')}
-          />
-          <FormLabel for="EMail">EMail</FormLabel>
-        </FormGroup>
         <FormGroup>
           <FormInput
             placeholder={'Телефон'}
@@ -165,8 +154,20 @@ const From = () => {
             required={true}
             {...register('telephone')}
           />
-          <FormLabel for="telephone">Телефон</FormLabel>
+          <FormLabel for="telephone">{t('main.formTelephone')}</FormLabel>
         </FormGroup>
+
+        <FormGroup>
+          <FormInput
+            placeholder={'EMail'}
+            id="EMail"
+            type="text"
+            required={true}
+            {...register('EMail')}
+          />
+          <FormLabel for="EMail">{t('main.formEmail')}</FormLabel>
+        </FormGroup>
+
         <FormGroup>
           <FormInput
             placeholder={'Откуда'}
@@ -174,8 +175,9 @@ const From = () => {
             type="text"
             {...register('from')}
           />
-          <FormLabel for="from">Откуда</FormLabel>
+          <FormLabel for="from">{t('main.formFrom')}</FormLabel>
         </FormGroup>
+
         <FormGroup>
           <FormInput
             placeholder={'Куда'}
@@ -183,8 +185,9 @@ const From = () => {
             type="text"
             {...register('to')}
           />
-          <FormLabel for="to">Куда</FormLabel>
+          <FormLabel for="to">{t('main.formTo')}</FormLabel>
         </FormGroup>
+
         <FormGroup>
           <FormInput
             placeholder={'Описание'}
@@ -192,7 +195,7 @@ const From = () => {
             type="text"
             {...register('description')}
           />
-          <FormLabel for="description">Описание груза</FormLabel>
+          <FormLabel for="description">{t('main.formDescription')}</FormLabel>
         </FormGroup>
 
         <Input
@@ -214,10 +217,10 @@ const From = () => {
         </DropZone>
 
         <Button type={'button'} onClick={clickBtn}>
-          Загрузить файл
+          {t('main.fileUploader')}
         </Button>
 
-        <Submit type="submit" />
+        <Submit type="submit" value={t('main.formSubmit')} />
       </Form>
     </Wrapper>
   );

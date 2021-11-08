@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 export const WrapperCarousel = styled.div`
   @media (max-width: 425px) {
-    margin-top: 70px;
+    margin-top: 100px;
   }
   & :after {
     background: rgba(1, 76, 90, 0.1);
@@ -149,6 +149,7 @@ export const Img = styled.img`
 `;
 
 export const Form = styled.section`
+  min-height: 900px;
   height: 100vh;
   position: relative;
   background: url(${bgForm}) center no-repeat;
