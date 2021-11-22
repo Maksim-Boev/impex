@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import {
@@ -16,42 +16,20 @@ import {
   ButtonDel,
   CheckIcon,
   WrappTitle,
+  Loader,
+  Backdrop,
 } from './style';
 
 import checkList from '../../assets/icon/checklist.svg';
 import { useTranslation } from 'react-i18next';
 
 const From = () => {
-  // const [img, setImg] = useState();
   const { t } = useTranslation();
-  const { register, handleSubmit } = useForm();
-
-  // const uploadScreenshotFile = (event) => {
-  //   for (let size = 0; size < event.target.files.length; size++) {
-  //     console.log('Selected file:', event.target.files[size]);
-  //     const data = new FormData();
-  //     data.append('file', event.target.files[0]);
-  //     console.log(data.get('file'));
-  //     // let file = {
-  //     //   file: event.target.files,
-  //     // };
-  //
-  //     setImg(event.target.files[size]);
-  //     console.log('uploading screenshot file...');
-  //     // axios
-  //     //   .post(`http://localhost:3003/upload`, data, {
-  //     //     headers: {
-  //     //       'Content-Type': 'multipart/form-data',
-  //     //     },
-  //     //   })
-  //     //   .then((res) => {
-  //     //     console.log(res);
-  //     //   });
-  //   }
-  // };
+  const { register, handleSubmit, reset } = useForm();
 
   const [file, setFile] = useState([]);
   const [fileName, setFileName] = useState([]);
+  const [loade, setLoade] = useState(false);
 
   const fileToBase64 = (file, cb) => {
     const reader = new FileReader();
@@ -70,12 +48,10 @@ const From = () => {
     }
 
     for (let prop = 0; prop < target.files.length; prop++) {
-      console.log(target.files[prop]);
       const obj = {};
       fileToBase64(target.files[prop], (err, result) => {
         if (result) {
           obj[target.files[prop].name] = result.split('base64,')[1];
-          // setFile(result.split('base64,')[1]);
           setFile((prevState) => [
             ...prevState,
             { [target.files[prop].name]: result.split('base64,')[1] },
@@ -87,7 +63,6 @@ const From = () => {
   };
 
   const Delete = (index) => {
-    console.log(fileName);
     const temp = [...fileName];
 
     temp.splice(index, 1);
@@ -95,30 +70,22 @@ const From = () => {
     setFileName(temp);
   };
 
-  useEffect(() => {
-    console.log('------');
-    console.log(
-      file.map((files) => ({
-        filename: Object.keys(files)[0],
-        content: Object.values(files)[0],
-        encoding: 'base64',
-      }))
-    );
-    console.log('------');
-  }, [fileName]);
-
   const onSubmit = (data) => {
-    console.log(data);
-    // const formData = new FormData();
-    // formData.append('file', data.files[0]);
-
     const dataWithFile = { ...data, file };
+    setLoade(true);
 
-    console.log(dataWithFile);
-
-    axios.post(`http://localhost:3004/post`, dataWithFile).then((res) => {
-      console.log(res);
-    });
+    axios
+      .post(`https://tranquil-sands-60093.herokuapp.com/post`, dataWithFile)
+      .then((res) => {
+        if (res.status === 200) {
+          alert('Ваша заявка отправленна');
+          reset();
+          setFile([]);
+          setFileName([]);
+        }
+      })
+      .catch((e) => console.log(e))
+      .finally(() => setLoade(false));
   };
 
   const ref = useRef(null);
@@ -134,6 +101,12 @@ const From = () => {
           <CheckIcon src={checkList} alt={''} />
           <FormTitle>{t('main.form')}</FormTitle>
         </WrappTitle>
+
+        {loade ? (
+          <Backdrop>
+            <Loader />
+          </Backdrop>
+        ) : null}
 
         <FormGroup>
           <FormInput

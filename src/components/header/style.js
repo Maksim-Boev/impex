@@ -38,7 +38,7 @@ export const Wrapper = styled.div`
 `;
 
 export const NavList = styled.nav`
-  width: 500px;
+  width: 650px;
   display: flex;
   justify-content: space-around;
   align-self: center;

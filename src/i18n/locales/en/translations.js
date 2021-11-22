@@ -29,7 +29,7 @@ export const en = {
     formTelephone: 'Телефон',
     formFrom: 'Откуда',
     formTo: 'Куда',
-    formDescription: 'Описание груза',
+    formDescription: 'Наименование груза, вес, объём',
     fileUploader: 'Загрузить файл',
     formSubmit: 'Отправить',
   },

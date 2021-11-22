@@ -1,7 +1,6 @@
 import Header from './components/header';
 import './i18n';
 import { Route, Switch } from 'react-router-dom';
-import { useEffect } from 'react';
 import Main from './pages/main';
 import AirPage from './pages/air';
 import ShipPage from './pages/ship';
@@ -11,21 +10,6 @@ import PageNotFound from './pages/PageNotFound';
 import Footer from './components/footer';
 
 const App = () => {
-  useEffect(() => {
-    // axios.post(`http://localhost:3001/post`, { name: 'max' }).then((res) => {
-    //   console.log(res);
-    //   console.log(res.data);
-    // });
-    // fetch('http://localhost/post', {
-    //   method: 'POST',
-    //   headers: {
-    //     Accept: 'application/json, text/plain, */*',
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ data }),
-    // }).catch((err) => console.log(err));
-  }, []);
-
   return (
     <div>
       <Header />

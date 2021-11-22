@@ -23,8 +23,6 @@ const DropDown = (prop) => {
   const handleOutsideClick = () => setIsOpen(false);
   useOutsideClick(ref, handleOutsideClick);
 
-  console.log(width);
-
   return (
     <>
       {width > 425 && (

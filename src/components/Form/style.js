@@ -153,6 +153,33 @@ export const Button = styled.button`
   margin-top: 20px;
 `;
 
+export const Backdrop = styled.div`
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: dimgrey;
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+`;
+
+export const Loader = styled.div`
+  border: 3px solid hsla(185, 100%, 100%, 1);
+  border-top-color: #00778b;
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  animation: spin 1s linear infinite;
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+`;
+
 export const Submit = styled.input`
   color: #fff;
   border: none;

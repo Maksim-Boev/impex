@@ -23,7 +23,7 @@ const LanguagesDrop = () => {
   const toggling = () => setIsOpenLang(!isOpenLang);
   const { width } = useWindowSize();
   const { i18n } = useTranslation();
-  console.log(currentLang);
+
   useEffect(() => {
     if (localStorage.getItem('lng') !== currentLang) {
       console.log('Chang Lang');

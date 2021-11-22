@@ -1,12 +1,12 @@
 import React from 'react';
-import DropDown from '../dropDown';
+// import DropDown from '../dropDown';
 import { Icon, LinkPhone, Wrapper } from './style';
 
 const Phone = () => {
-  const [number, setNumber] = React.useState('+38 (050) 749-37-37');
-  const handleNumber = (number) => {
-    setNumber(number);
-  };
+  // const [number, setNumber] = React.useState('+38 (050) 749-37-37');
+  // const handleNumber = (number) => {
+  //   setNumber(number);
+  // };
   return (
     <Wrapper>
       <Icon>
@@ -29,9 +29,14 @@ const Phone = () => {
         </svg>
       </Icon>
 
-      <LinkPhone href={`tel:${number}`}>{number}</LinkPhone>
+      <LinkPhone href={`tel:+38 (050) 749-37-37`}>
+        +38 (050) 749-37-37
+      </LinkPhone>
+      <LinkPhone href={`tel:+38 (098) 749-37-37`}>
+        +38 (098) 749-37-37
+      </LinkPhone>
 
-      <DropDown setNumber={handleNumber} />
+      {/*<DropDown setNumber={handleNumber} />*/}
     </Wrapper>
   );
 };
