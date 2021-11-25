@@ -5,6 +5,9 @@ export const PageWrapper = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   padding: 140px 50px 50px;
+  & p {
+    text-align: justify;
+  }
   & span {
     font-weight: bold;
   }
