@@ -153,18 +153,70 @@ export const Button = styled.button`
   margin-top: 20px;
 `;
 
+export const Container = styled.div`
+  width: 100%;
+  position: relative;
+`;
+
 export const Backdrop = styled.div`
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: dimgrey;
-  opacity: 0.5;
+  background: rgb(105, 105, 105, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 5;
+`;
+
+export const ResponceCard = styled.div`
+  width: clamp(320px, 40%, 550px);
+  height: 140px;
+  background: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center !important;
+  p {
+    text-align: center !important;
+  }
+  span {
+    font-size: 21px;
+    @media (max-width: 425px) {
+      font-size: 18px;
+    }
+  }
+`;
+
+export const Close = styled.div`
+  position: absolute;
+  right: 4px;
+  top: 8px;
+  width: 32px;
+  height: 24px;
+  opacity: 0.3;
+  :hover {
+    opacity: 1;
+  }
+  :before,
+  :after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 22px;
+    width: 2px;
+    background-color: #333;
+  }
+  :before {
+    transform: rotate(45deg);
+  }
+  :after {
+    transform: rotate(-45deg);
+  }
 `;
 
 export const Loader = styled.div`

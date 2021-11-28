@@ -51,5 +51,5 @@ export const LangWrapper = styled.a`
 
 export const Lang = styled.div`
   padding: 0 20px;
-  color: #6dbfd1;
+  color: ${({ active }) => (active ? '#fff' : '#6dbfd1')};
 `;

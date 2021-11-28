@@ -16,8 +16,11 @@ import {
   ButtonDel,
   CheckIcon,
   WrappTitle,
-  Loader,
   Backdrop,
+  ResponceCard,
+  Close,
+  Loader,
+  // Container,
 } from './style';
 
 import checkList from '../../assets/icon/checklist.svg';
@@ -29,7 +32,9 @@ const From = () => {
 
   const [file, setFile] = useState([]);
   const [fileName, setFileName] = useState([]);
-  const [loade, setLoade] = useState(false);
+  const [loade, setLoade] = useState(true);
+  const [visiblyBackdrop, setVisiblyBackdropd] = useState(false);
+  const [responce, setResponce] = useState('');
 
   const fileToBase64 = (file, cb) => {
     const reader = new FileReader();
@@ -78,13 +83,18 @@ const From = () => {
       .post(`https://tranquil-sands-60093.herokuapp.com/post`, dataWithFile)
       .then((res) => {
         if (res.status === 200) {
+          setVisiblyBackdropd(true);
+          setResponce('success');
           alert('Ваша заявка отправленна');
           reset();
           setFile([]);
           setFileName([]);
         }
       })
-      .catch((e) => console.log(e))
+      .catch((e) => {
+        console.log(e);
+        setResponce('error');
+      })
       .finally(() => setLoade(false));
   };
 
@@ -96,18 +106,31 @@ const From = () => {
 
   return (
     <Wrapper>
+      {visiblyBackdrop ? (
+        <Backdrop>
+          {loade ? <Loader /> : null}
+
+          {responce === 'success' ? (
+            <ResponceCard>
+              <Close onClick={() => setVisiblyBackdropd(false)} />
+              <span>{t('main.success')}</span>
+              <p>{t('main.success1')}</p>
+            </ResponceCard>
+          ) : null}
+
+          {responce === 'error' ? (
+            <ResponceCard>
+              <Close onClick={() => setVisiblyBackdropd(false)} />
+              <span>{t('main.error')}</span>
+            </ResponceCard>
+          ) : null}
+        </Backdrop>
+      ) : null}
       <Form onSubmit={handleSubmit(onSubmit)}>
         <WrappTitle>
           <CheckIcon src={checkList} alt={''} />
           <FormTitle>{t('main.form')}</FormTitle>
         </WrappTitle>
-
-        {loade ? (
-          <Backdrop>
-            <Loader />
-          </Backdrop>
-        ) : null}
-
         <FormGroup>
           <FormInput
             id="Name"

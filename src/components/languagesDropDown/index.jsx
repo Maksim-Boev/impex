@@ -26,7 +26,6 @@ const LanguagesDrop = () => {
 
   useEffect(() => {
     if (localStorage.getItem('lng') !== currentLang) {
-      console.log('Chang Lang');
       localStorage.setItem('lng', currentLang);
     }
     i18n.changeLanguage(currentLang);

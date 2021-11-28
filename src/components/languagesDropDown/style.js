@@ -18,6 +18,7 @@ export const ListItem = styled('li')`
   padding: 3px 0;
   font-size: 14px;
   border-bottom: solid 1px transparent;
+  cursor: pointer;
   :hover {
     border-bottom: solid 1px #fff;
   }
@@ -26,6 +27,10 @@ export const ListItem = styled('li')`
 export const CurrentLang = styled.div`
   color: white;
   font-size: 20px;
+  cursor: pointer;
+  :hover {
+    color: aquamarine;
+  }
 `;
 
 export const Border = styled.div`

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   TicketList,
   Link,
@@ -8,8 +8,22 @@ import {
   TelWrapper,
 } from './StyledComponents';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 const Drawer = ({ toggle, onClick }) => {
+  const [currentLang, setCurrentLang] = useState(
+    localStorage.getItem('lng') || 'uk'
+  );
+
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    if (localStorage.getItem('lng') !== currentLang) {
+      localStorage.setItem('lng', currentLang);
+    }
+    i18n.changeLanguage(currentLang);
+  }, [currentLang]);
+  console.log(currentLang === 'uk');
   return (
     <>
       <TicketList open={toggle}>
@@ -22,7 +36,6 @@ const Drawer = ({ toggle, onClick }) => {
         {/*<Link to={'/'}>*/}
         {/*  <span onClick={onClick}>Контакты</span>*/}
         {/*</Link>*/}
-
         <TelWrapper>
           <LinkPhone href={`tel:+38 (050) 749-37-37`}>
             +38 (050) 749-37-37
@@ -36,9 +49,33 @@ const Drawer = ({ toggle, onClick }) => {
         </TelWrapper>
 
         <LangWrapper>
-          <Lang>UK</Lang>
-          <Lang style={{ color: '#fff' }}>RU</Lang>
-          <Lang>EN</Lang>
+          <Lang
+            active={currentLang === 'uk'}
+            onTouchStart={() => {
+              setCurrentLang('uk');
+              onClick();
+            }}
+          >
+            UK
+          </Lang>
+          <Lang
+            active={currentLang === 'ru'}
+            onTouchStart={() => {
+              setCurrentLang('ru');
+              onClick();
+            }}
+          >
+            RU
+          </Lang>
+          <Lang
+            active={currentLang === 'en'}
+            onTouchStart={() => {
+              setCurrentLang('en');
+              onClick();
+            }}
+          >
+            EN
+          </Lang>
         </LangWrapper>
       </TicketList>
     </>
