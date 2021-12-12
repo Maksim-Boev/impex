@@ -182,11 +182,16 @@ export const ResponceCard = styled.div`
   align-items: center;
   text-align: center !important;
   p {
+    color: black !important;
     text-align: center !important;
   }
   span {
     font-size: 21px;
+    color: black !important;
+    font-weight: 700;
     @media (max-width: 425px) {
+      font-weight: 700;
+      color: black !important;
       font-size: 18px;
     }
   }

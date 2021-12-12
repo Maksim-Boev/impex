@@ -15,7 +15,7 @@ const Drawer = ({ toggle, onClick }) => {
     localStorage.getItem('lng') || 'uk'
   );
 
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   useEffect(() => {
     if (localStorage.getItem('lng') !== currentLang) {
@@ -28,14 +28,11 @@ const Drawer = ({ toggle, onClick }) => {
     <>
       <TicketList open={toggle}>
         <Link to={'/#about'}>
-          <span onClick={onClick}>О нас</span>
+          <span onClick={onClick}>{t('main.aboutNav')}</span>
         </Link>
         <Link to={'/#services'}>
-          <span onClick={onClick}>Услуги</span>
+          <span onClick={onClick}>{t('main.serviceNav')}</span>
         </Link>
-        {/*<Link to={'/'}>*/}
-        {/*  <span onClick={onClick}>Контакты</span>*/}
-        {/*</Link>*/}
         <TelWrapper>
           <LinkPhone href={`tel:+38 (050) 749-37-37`}>
             +38 (050) 749-37-37
@@ -51,7 +48,7 @@ const Drawer = ({ toggle, onClick }) => {
         <LangWrapper>
           <Lang
             active={currentLang === 'uk'}
-            onTouchStart={() => {
+            onClick={() => {
               setCurrentLang('uk');
               onClick();
             }}
@@ -60,7 +57,7 @@ const Drawer = ({ toggle, onClick }) => {
           </Lang>
           <Lang
             active={currentLang === 'ru'}
-            onTouchStart={() => {
+            onClick={() => {
               setCurrentLang('ru');
               onClick();
             }}
@@ -69,7 +66,7 @@ const Drawer = ({ toggle, onClick }) => {
           </Lang>
           <Lang
             active={currentLang === 'en'}
-            onTouchStart={() => {
+            onClick={() => {
               setCurrentLang('en');
               onClick();
             }}

@@ -20,7 +20,6 @@ import {
   ResponceCard,
   Close,
   Loader,
-  // Container,
 } from './style';
 
 import checkList from '../../assets/icon/checklist.svg';
@@ -78,14 +77,12 @@ const From = () => {
   const onSubmit = (data) => {
     const dataWithFile = { ...data, file };
     setLoade(true);
-
+    setVisiblyBackdropd(true);
     axios
-      .post(`https://tranquil-sands-60093.herokuapp.com/post`, dataWithFile)
+      .post(`https://secure-reef-43349.herokuapp.com/post`, dataWithFile)
       .then((res) => {
         if (res.status === 200) {
-          setVisiblyBackdropd(true);
           setResponce('success');
-          alert('Ваша заявка отправленна');
           reset();
           setFile([]);
           setFileName([]);
