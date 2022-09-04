@@ -33,6 +33,7 @@ export const en = {
     success: 'Thank you for your application!',
     success1: 'Our manager will contact you soon',
     error: 'Something went wrong...',
+    association: 'Членство в ассоциациях:',
   },
   air: {
     h1: 'Авиаперевозки',

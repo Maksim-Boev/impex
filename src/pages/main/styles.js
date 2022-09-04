@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import bgAbout from '../../assets/images/shutterstock.webp';
+import bgAbout from '../../assets/images/shutterstock.jpg';
 import { Link } from 'react-router-dom';
-import bgService from '../../assets/images/doroga.webp';
-import bgForm from '../../assets/images/sklad.webp';
+import bgService from '../../assets/images/doroga.jpg';
+import bgForm from '../../assets/images/sklad.jpg';
 import { HashLink } from 'react-router-hash-link';
 
 export const Container = styled.div`
@@ -28,6 +28,7 @@ export const WrapperCarousel = styled.div`
 
 export const About = styled.section`
   height: 100vh;
+  min-height: 700px;
   position: relative;
   background: url(${bgAbout}) center no-repeat;
   background-size: cover;
@@ -58,7 +59,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Text = styled.div`
-  width: 40%;
+  width: 50%;
   padding: 125px 0 0 100px;
   font-size: 24px;
   @media (max-width: 1024px) {
@@ -177,6 +178,7 @@ export const Form = styled.section`
 
 export const Services = styled.section`
   height: 100vh;
+  min-height: 1000px;
   position: relative;
   background: url(${bgService}) center no-repeat;
   background-size: cover;
@@ -185,6 +187,7 @@ export const Services = styled.section`
   @media (max-width: 425px) {
     //padding: 0 10px;
     background-position: 40%;
+    min-height: 710px;
   }
   :after {
     background: linear-gradient(
@@ -207,7 +210,7 @@ export const LinkForm = styled(HashLink)`
   background: rgba(19, 128, 149, 1);
   padding: 10px 30px;
   position: absolute;
-  top: 400px;
+  top: 25vw;
   z-index: 3;
   @media (max-width: 425px) {
     top: 170px;

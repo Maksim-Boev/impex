@@ -151,6 +151,7 @@ export const Button = styled.button`
   border-radius: 5px;
   padding: 10px 0;
   margin-top: 20px;
+  cursor: pointer;
 `;
 
 export const Container = styled.div`
@@ -244,6 +245,7 @@ export const Submit = styled.input`
   border-radius: 5px;
   padding: 10px 0;
   margin-top: 20px;
+  cursor: pointer;
 `;
 
 export const FormTitle = styled.h2`

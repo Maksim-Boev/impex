@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Img, PageWrapper } from '../styles';
-import trainImg from '../../assets/images/train.webp';
+import trainImg from '../../assets/images/train.jpg';
 import FormFromPages from '../formFromServices';
 import { useTranslation } from 'react-i18next';
 

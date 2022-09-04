@@ -34,7 +34,7 @@ const LanguagesDrop = () => {
   return (
     <>
       {width > 425 && (
-        <div ref={ref}>
+        <div style={{ alignSelf: 'center' }} ref={ref}>
           <CurrentLang onClick={toggling}>
             {currentLang.toUpperCase()}
           </CurrentLang>

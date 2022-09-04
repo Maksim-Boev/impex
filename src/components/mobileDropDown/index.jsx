@@ -1,14 +1,13 @@
 import { Toggle } from './style';
-import PropTypes from 'prop-types';
 import { useWindowSize } from '../../hooks/useWindowSize';
 import Drawer from '../Drawer';
 import { useState } from 'react';
 
 const BurgerToggle = () => {
   const { width } = useWindowSize();
-  const [isToggled, setToggle] = useState(false);
+  const [isToggled, setIsToggled] = useState(false);
   const toggleSideNav = () => {
-    setToggle(!isToggled);
+    setIsToggled(!isToggled);
   };
   return (
     <>
@@ -34,7 +33,3 @@ const BurgerToggle = () => {
 
 export default BurgerToggle;
 
-BurgerToggle.propTypes = {
-  isToggled: PropTypes.isToggled,
-  toggleSideNav: PropTypes.toggleSideNav,
-};

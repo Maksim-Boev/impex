@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Img, PageWrapper } from '../styles';
-import airImg from '../../assets/images/load aircraft.webp';
+import airImg from '../../assets/images/load aircraft.jpg';
 import FormFromPages from '../formFromServices';
 import { useTranslation } from 'react-i18next';
 

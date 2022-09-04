@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import bgForm from '../assets/images/sklad.webp';
+import bgForm from '../assets/images/sklad.jpg';
 
 export const PageWrapper = styled.div`
   max-width: 1280px;

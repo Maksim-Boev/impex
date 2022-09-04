@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Img, PageWrapper } from '../styles';
-import shipImg from '../../assets/images/ship.webp';
+import shipImg from '../../assets/images/ship.jpg';
 import FormFromPages from '../formFromServices';
 import { useTranslation } from 'react-i18next';
 

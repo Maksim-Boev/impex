@@ -39,6 +39,7 @@ export const Wrapper = styled.div`
 
 export const NavList = styled.nav`
   width: 650px;
+  height: 130px;
   display: flex;
   justify-content: space-around;
   align-self: center;

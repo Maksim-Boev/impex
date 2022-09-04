@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.footer`
   width: 100%;
-  height: 200px;
+  // height: 200px;
   background: dimgrey;
 `;
 
@@ -34,6 +34,18 @@ export const Address = styled.a`
 `;
 
 export const Facebook = styled.a`
+  display: flex;
+  width: 30px;
+  padding-left: 20px;
+  :hover {
+    & path {
+      fill: aquamarine;
+    }
+  }
+`;
+
+export const Instagram = styled.a`
+  display: flex;
   width: 30px;
   padding-left: 20px;
   :hover {
@@ -46,7 +58,8 @@ export const Facebook = styled.a`
 export const WrappSocial = styled.div`
   color: #fff;
   display: flex;
-  padding-top: 10px;
+  align-items: center;
+  padding: 10px 0;
 `;
 
 export const WrappContact = styled.div`
@@ -58,5 +71,22 @@ export const WrappContact = styled.div`
   @media (max-width: 425px) {
     width: 80%;
     padding-left: 30px;
+  }
+`;
+export const Associations = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px 0;
+`;
+
+export const AssociationsLogo = styled.img`
+  max-width: 300px;
+
+  @media (min-width: 425px) {
+    max-width: 400px;
   }
 `;
